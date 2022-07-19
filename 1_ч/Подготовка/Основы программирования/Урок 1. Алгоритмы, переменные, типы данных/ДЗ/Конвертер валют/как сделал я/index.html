@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Конвертер валют</title>
+	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+	<header>
+		<h1><a href="#">Конвертер валют</a></h1>
+	</header>
+	<section class="wrapper">
+		<div class="exchange-rates">
+			<h2>Курс валют</h2>
+			<hr>
+			<div class="currency">
+				<div class="usd-rate rate">
+					<h2>USD-RUB</h2>
+					<h2 id="usd-rate-value">75.29</h2>
+				</div>
+				<div class="eur-rate rate">
+					<h2>EUR-RUB</h2>
+					<h2 id="eur-rate-value">90.50</h2>
+				</div>
+			</div>
+		</div>
+		<div class="input-box">
+			<h2>Кошелёк</h2>
+			<hr>
+			<div class="converter-box">
+				<div class="converter">
+					<input id="input" type="number" placeholder="RUB">
+					<button id="convert-btn">Конвертировать</button>
+				</div>
+				<div class="convert-result">
+					<div class="usd-res rate">
+						<h2>USD</h2>
+						<h2 id="usd-res-value">0.00</h2>
+					</div>
+					<div class="eur-res rate">
+						<h2>EUR</h2>
+						<h2 id="eur-res-value">0.00</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<script src="script.js"></script>
+</body>
+</html>

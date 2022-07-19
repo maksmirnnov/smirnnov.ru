@@ -1,0 +1,48 @@
+<!-- Стандартная HTML разметка -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let tryCount = 3;
+        for(let i = 1; i <= tryCount; i++){
+            var riddle = prompt('Зимой и летом одним цветом:').toLowerCase();
+            if(riddle == 'ёлка' || riddle == 'ель' || riddle == 'елка'){
+                alert(`Правильно! Это ${riddle}, игра окончена.`)
+                break;
+            } else{
+                if(i == tryCount){
+                    alert(`Неверно!\nЭто же Ёлка!`)
+                } else {
+                    alert(`Неверно!\nПопыток осталось ${tryCount - i}`)
+                }
+            }
+        }
+
+        let correctAnswersCount = 0;
+        let correctAnswer = '12'
+        alert('А теперь 3 загадки с одной попыткой!\nЗа каждый правильный ответ +1 балл.')
+
+        riddle = +prompt('Сколько будет 3+3*3?')
+        for(let i = 1; i <= tryCount; i++){
+            if(i == 2){
+                riddle = prompt('Два конца, два кольца, посредине гвоздик.').toLowerCase()
+                correctAnswer = 'ножницы'
+            } else if(i == 3){
+                riddle = prompt('Не огонь, а жжется.').toLowerCase()
+                correctAnswer = 'крапива';
+            }
+            if(riddle == correctAnswer){
+                correctAnswersCount += 1;
+                alert('Молодец, отгадал!\n+1 балл!')
+            } else {
+                alert(`Нет, не верно!\nЭто ${correctAnswer}`)
+            }
+        }
+        document.write(`Количество набранных баллов: ${correctAnswersCount}`)
+    </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+/*Без комментариев...*/
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Oswald', sans-serif;
+	transition: .3s;
+}
+a{
+	text-decoration: none;
+	color: #f3f3f3;
+}
+h1{
+	font-size: 40px;
+	color: #f3f3f3;
+}
+h2{
+	font-size: 30px;
+	color: #f3f3f3;
+}
+.wrapper{
+	width: 100%;
+	padding: 10px;
+}
+header{
+	height: 10vh;
+	background-color: #111;
+}
+section{
+	height: 90vh;
+	background-color: #111;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 2vw;
+}
+.exchange-rates{
+	display: grid;
+	grid-template-rows: 0fr 0fr 1fr;
+}
+.currency{
+	display: grid;
+	grid-template-rows: 0fr 0fr;
+	grid-gap: 2vh;
+}
+.rate{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+.rate:hover h2{
+	color: #4b0000;
+}
+.rate h2:last-child{
+	justify-self: end;
+}
+.input-box{
+	display: grid;
+	grid-template-rows: 0fr 0fr 1fr;
+}
+.converter-box{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+.converter{
+	display: grid;
+	grid-template-rows: 0fr 0fr;
+	grid-row-gap: 2px;
+}
+input{
+	height: 50px;
+	width: 300px;
+	background-color: #f3f3f3;
+	outline: none;
+	border: none;
+	font-size: 20px;
+	padding-left: 10px;
+	box-shadow: 1px 1px 0 #4b0000;
+}
+.convert-result{
+	display: grid;
+	grid-template-rows: 0fr 0fr;
+	grid-row-gap: 2vh;
+}
+#convert-btn{
+	height: 50px;
+	width: 200px;
+	border: none;
+	font-size: 20px;
+	cursor: pointer;
+	text-transform: uppercase;
+}
+#convert-btn:hover{
+	background-color: #4b0000;
+	color: #f3f3f3;
+}

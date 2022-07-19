@@ -1,0 +1,18 @@
+<!-- Стандартная HTML разметка -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let depositYears = 5;
+        let depositAmount = +prompt('Введите сумму вклада:')
+        let depositPercent = +prompt('Введите желаемый % по вкладу:')
+        for(let i = 1; i <= depositYears; i++){
+            alert(`В ${i}-й год ваш вклад будет составлять ${(depositAmount += (depositAmount * depositPercent)/100).toFixed(2)}`)
+        }
+    </script>
+</body>
+</html>

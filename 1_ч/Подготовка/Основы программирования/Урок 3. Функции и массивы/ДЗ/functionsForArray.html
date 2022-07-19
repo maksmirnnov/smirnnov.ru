@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //Задание под буквой А.
+        document.write(`<h3>Задание под буквой А.</h3>`)
+        function createArrWithNumbers(n){
+            let localArr = [];
+            for(let i = 1; i <= n; i++){
+                localArr.push(i);
+            }
+            return localArr;
+        }
+        let array = createArrWithNumbers(5);
+        document.write(array);
+
+    //Задание под буквой B.
+        document.write(`<h3>Задание под буквой B.</h3>`);
+        let someArray = [25, 14, 58, 47, 84];
+        function summArrayNumbers(arr){
+            let localSumm = 0;
+            for(let i = 0; i < arr.length; i++){
+                localSumm += arr[i];
+            }
+            return localSumm;
+        }
+        let summ = summArrayNumbers(someArray);
+        document.write(summ);
+
+    //Задание под буквой C.
+        document.write(`<h3>Задание под буквой C.</h3>`);
+
+        //Какое решение ожидается
+        function getMaxNumber(arr){
+            let localMax = arr[0];
+            for(let i = 0; i < arr.length; i++){
+                if(arr[i] > localMax){
+                    localMax = arr[i]
+                }
+            }
+            return localMax;
+        }
+        let max = getMaxNumber(someArray)
+        document.write(max)
+
+        //Самая простая реализация
+        function getMaxNumber(arr){
+            return Math.max(...arr) //Если интересно как это работает - Гугли: rest и spread операторы в JavaScript.
+        }
+        let max2 = getMaxNumber(someArray)
+        document.write(`<br>${max2}`)
+    
+    //Задание под буквой D.
+        document.write(`<h3>Задание под буквой D.</h3>`);
+
+        //(Всё то же что и в C, только в блоке if знак другой)
+        function getMinNumber(arr){
+            let localMin = arr[0];
+            for(let i in arr){ //Эквивалентно: (let i = 0; i < arr.length; i++). Гугли: for in и for of в JavaScript.
+                if(arr[i] < localMin){
+                    localMin = arr[i]
+                }
+            }
+            return localMin;
+        }
+        let min = getMinNumber(someArray)
+        document.write(min)
+
+        //(И здесь всё то же что и в C, только вместо Math.max - min.)
+        function getMinNumber(arr){
+            return Math.min(...arr)
+        }
+        let min2 = getMinNumber(someArray)
+        document.write(`<br>${min2}`)
+
+    //Задание под буквой F.
+        document.write(`<h3>Задание под буквой F.</h3>`);
+
+        //Какое решение ожидается
+        function getEvenNum(arr){
+            let localEvenArr = [];
+            for(let i in arr){
+                if(arr[i] % 2 == 0){
+                    localEvenArr.push(arr[i])
+                }
+            }
+            return localEvenArr;
+        }
+        let evenNum = getEvenNum(someArray)
+        document.write(evenNum)
+
+        //Самая простая реализация
+        function getEvenNum2(arr){
+            return arr.filter(num => num % 2 == 0) //Гугли: стрелочные функции в JavaScript.
+        }
+        let evenNum2 = getEvenNum2(someArray)
+        document.write(`<br>${evenNum2}`)
+
+        document.write(`<h5>Где вывожу результат 2 раза (в столбик) - это не ошибка. Это специально для демонстрации более рационального решения.</h5>`)
+    </script>
+</body>
+</html>

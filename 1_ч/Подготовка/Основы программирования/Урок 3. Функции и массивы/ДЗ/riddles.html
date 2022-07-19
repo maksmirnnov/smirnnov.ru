@@ -1,0 +1,45 @@
+<!-- Стандартная HTML разметка -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let tryCount = 3;
+        for(let i = 1; i <= tryCount; i++){
+            var answer = prompt('Зимой и летом одним цветом:').toLowerCase();
+            if(answer == 'ёлка' || answer == 'ель' || answer == 'елка'){
+                alert(`Правильно! Это ${answer}, игра окончена.`)
+                break;
+            } else{
+                if(i == tryCount){
+                    alert(`Неверно!\nЭто же Ёлка!`)
+                }
+                    alert(`Неверно!\nПопыток осталось ${tryCount - i}`) //краткая запись else.
+            }
+        }
+
+        let correctAnswersCount = 0;
+        let correctAnswer;
+        let riddleContent = [['Сколько будет 3+3*3?', ['12', 'двенадцать']], ['Два конца, два кольца, посредине гвоздик.', ['ножницы']],['Не огонь, а жжется.', ['крапива']]];
+
+        alert('А теперь 3 загадки с одной попыткой!\nЗа каждый правильный ответ +1 балл.')
+        function GetAndCheckAnswer(i){
+            answer = prompt(riddleContent[i][0]).toLowerCase();
+            correctAnswer = riddleContent[i][1];
+            if(correctAnswer.includes(answer)){ //Дословно: если переменная с правильным ответом содержит ответ пользователя, то делать что-то...
+                correctAnswersCount++;
+                alert('Молодец, отгадал!\n+1 балл!')
+            } else {
+                alert(`Нет, не верно!\nЭто ${correctAnswer[0]}`) //а тут краткая запись else не работает корректно почему-то, хотя должна, поэтому написал обычно.
+            }
+        }
+        for(let i = 0; i < tryCount; i++){
+            GetAndCheckAnswer(i);
+        }
+        document.write(`Количество набранных баллов: ${correctAnswersCount}`)
+    </script>
+</body>
+</html>

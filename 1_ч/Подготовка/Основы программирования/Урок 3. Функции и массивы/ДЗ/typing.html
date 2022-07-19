@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let level = 1;
+        const levelContent = [
+            ["Положите 4 пальца левой руки - мизинец, безымянный, средний и указательный - на клавиши ф, ы, в, а. Запомните, что буква А находится под вашим указательным пальцем, а Ф - под мизинцем.\nТеперь неспеша набирайте текст. Постарайтесь не смотреть на клавиатуру.", ['ф', 'а']],
+
+            ["Поставьте мизинец левой руки на букву Ф, безымянный палец — на Ы, средний — на В, указательный — на А. Мизинец правой руки на букву Ж, безымянный палец — на Д, средний — на Л, указательный — на О. Запомните расположение пальцев. Повторяйте за мной.", ['ы', 'в']],
+
+            ["Поставьте мизинец левой руки на букву Ф, безымянный палец — на Ы, средний — на В, указательный — на А. Мизинец правой руки на букву Ж, безымянный палец — на Д, средний -— на Л, указательный — на О. Запомните расположение пальцев", ['о', 'ж']],
+        ]
+        let text = '';
+        let userText = '';
+        function generateText(letters, length){
+            let text = '';
+            for(let i = 0; i < length; i++){
+                let randomNum = getRandomNumber(letters.length - 1);
+                text += letters[randomNum]
+            }
+            return text;
+        }
+        function getRandomNumber(max){
+            return Math.round(Math.random()*max)
+        }
+        function check(){
+            userText = prompt(text);
+            if(userText == text){
+                alert('Всё верно!')
+                if(level == levelContent.length){
+                    level = 1;
+                } else {
+                    level++;
+                }
+            } else {
+                alert('Вы ошиблись. попробуйте ещё раз.')
+            }
+        }
+        function higherOrderFunction(){
+            alert(levelContent[level-1][0])
+            text = generateText(levelContent[level-1][1], 10);
+            check();
+        }
+        alert("Вас приветствует программа по обучению слепой печати")
+        while(level <= levelContent.length){
+            while(level == 1){
+                higherOrderFunction()
+            }
+            while(level == 2){
+                higherOrderFunction()
+            }
+            while(level == 3){
+                higherOrderFunction()
+            }
+        }
+    </script>
+</body>
+</html>

